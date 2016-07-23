@@ -7,7 +7,9 @@ var Comment = require("./models/comment");
 var seedDB = require("./seeds");
 
 
-mongoose.connect("mongodb://localhost/yelp_camp");
+//mongoose.connect("mongodb://localhost/yelp_camp");
+mongoose.connect("mongodb://Joshua:Slamdunk14@ds029715.mlab.com:29715/yelpcamp");
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
