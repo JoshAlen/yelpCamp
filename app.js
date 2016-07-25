@@ -7,8 +7,8 @@ var Comment = require("./models/comment");
 
 
 
-mongoose.connect("mongodb://localhost/yelp_camp");
-//mongoose.connect("mongodb://Joshua:Slamdunk14@ds029715.mlab.com:29715/yelpcamp");
+//mongoose.connect("mongodb://localhost/yelp_camp");
+mongoose.connect("mongodb://Joshua:Slamdunk14@ds029715.mlab.com:29715/yelpcamp");
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
