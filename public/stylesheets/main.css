@@ -9,3 +9,28 @@
 .thumbnail .caption-full {
     padding: 9px;   
 }
+#wallPaper {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          min-height: 100%;
+          min-width: 100%;
+          height: auto;
+          width: auto;
+          z-index: -1000;
+}
+#aboutBG {
+          position: fixed;
+          bottom: 0;
+          right: 0;
+          min-height: 100%;
+          min-width: 100%;
+          height: auto;
+          width: auto;
+          z-index: -1000;
+}
+
+.aboutText {
+    text-align: justify;
+    line-height: 150%;
+}

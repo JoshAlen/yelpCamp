@@ -4,16 +4,16 @@ var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
 var Campground = require("./models/campground");
 var Comment = require("./models/comment");
-var seedDB = require("./seeds");
 
 
-//mongoose.connect("mongodb://localhost/yelp_camp");
-mongoose.connect("mongodb://Joshua:Slamdunk14@ds029715.mlab.com:29715/yelpcamp");
+
+mongoose.connect("mongodb://localhost/yelp_camp");
+//mongoose.connect("mongodb://Joshua:Slamdunk14@ds029715.mlab.com:29715/yelpcamp");
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
-seedDB();
+
 
 app.get("/", function(req, res){
     res.render("landing");
@@ -103,7 +103,10 @@ app.post("/campgrounds/:id/comments", function(req, res){
    //create new comment
    //connect new comment to campground
    //redirect campground show page
-   
+});
+
+app.get("/other/about", function(req, res){
+    res.render("other/about");
 });
 
 

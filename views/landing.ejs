@@ -1,9 +1,28 @@
-<% include partials/header %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="/stylesheets/landing.css">
+<body>
+<video id="background" autoplay="" loop="" muted="" poster="">
+        <source src="/stylesheets/outDoors.mp4">
+</video>
 
-<h1>landing page</h1>
-
-<p>welcome to the landing page</p>
-
-<a href="/campgrounds">vew all campgrounds</a>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="content">
+				<h1>YelpCamp</h1>
+				<h3>Find Your Next Adventure!</h3>
+				<hr>
+				<a href="/campgrounds" class="btn btn-default btn-lg"><i class="fa fa-paw fa-fw"></i>Get Started!</a>
+			</div>
+		</div>
+	</div>
+</div>
 
 <% include partials/footer %>
