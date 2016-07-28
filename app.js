@@ -5,10 +5,9 @@ var mongoose = require("mongoose");
 var Campground = require("./models/campground");
 var Comment = require("./models/comment");
 
-
-
+var url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp"
+mongoose.connect(url);
 //mongoose.connect("mongodb://localhost/yelp_camp");
-mongoose.connect("mongodb://Joshua:Slamdunk14@ds029715.mlab.com:29715/yelpcamp");
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
@@ -107,6 +106,10 @@ app.post("/campgrounds/:id/comments", function(req, res){
 
 app.get("/other/about", function(req, res){
     res.render("other/about");
+});
+
+app.get("/other/colorgame", function(req, res){
+    res.render("other/colorGame");
 });
 
 
