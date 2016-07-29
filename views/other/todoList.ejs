@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <script   src="https://code.jquery.com/jquery-3.1.0.min.js"
+    integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+    crossorigin="anonymous"></script>
+      <style>
+      body {
+        font-family: 'Roboto', sans-serif;
+        background: url(http://wallpapercave.com/wp/f2nbsPJ.jpg);
+      }
+      #container {
+        width: 360px;
+        margin: 100px auto;
+        border: 2px solid gray;
+        background: #f7f7f7;
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+      }
+
+      .completed {
+        color:grey;
+        text-decoration: line-through;
+      }
+
+      h1 {
+        background: #2980b9;
+        color: white;
+        margin: 0;
+        padding: 10px 20px;
+        text-transform: uppercase;
+        font-size: 24px;
+        font-weight: normal;
+        border: 3px solid rgba(0, 0, 0, 0);
+      }
+
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      li {
+        background: #fff;
+        height: 40px;
+        line-height: 40px;
+        color: #666;
+      }
+
+      li:nth-child(2n){
+        background: #f7f7f7;
+      }
+
+      input {
+        font-size: 18px;
+        color: #2980b9;
+        background-color: #f7f7f7;
+        width: 100%;
+        padding: 13px 13px 10px 20px;
+        box-sizing: border-box;
+      }
+
+      input:focus {
+          background: #fff;
+          border: 3px solid #2980b9;
+          outline: none;
+      }
+      span {
+        background: #CD5C5C;
+        height: 40px;
+        margin-right: 20px;
+        text-align: center;
+        display: inline-block;
+        width: 0px;
+        transition: 0.2s linear;
+        opacity: 0;
+        color: white;
+      }
+
+      li:hover span {
+        width: 40px;
+        opacity: 1.0;
+      }
+
+      .fa-plus-square {
+        float: right;
+      }
+      </style>
+  </head>
+  <body>
+      <div id="container">
+        <h1>To Do List <i class="fa fa-plus-square" aria-hidden="true"></i></h1>
+        <input type="text" placeholder="Add New Todo">
+        <ul>
+          <li><span><i class="fa fa-minus-square" aria-hidden="true"></i></span> Lean AJAX</li>
+          <li><span><i class="fa fa-minus-square" aria-hidden="true"></i></span> Lean AngularJS</li>
+          <li><span><i class="fa fa-minus-square" aria-hidden="true"></i></span> Have Fun</li>
+        </ul>
+      </div>
+
+    <script>
+
+      $("ul").on("click", "li", function(){
+        $(this).toggleClass("completed");
+      });
+
+      $("ul").on("click", "span", function(event){
+        $(this).parent().fadeOut(500, function(){
+          $(this).remove();
+        });
+        event.stopPropagation();
+      });
+
+      $("input[type='text']").keypress(function(event){
+        if(event.which === 13){
+          var todoText = $(this).val();
+          $(this).val("");
+          $("ul").append("<li><span><i class='fa fa-minus-square' aria-hidden='true'></i></span> " + todoText + "</li>");
+        }
+      });
+      $(".fa-plus-square").click(function(){
+        $("input[type='text']").fadeToggle();
+      });
+    </script>
+
+<% include ../partials/footer %>
