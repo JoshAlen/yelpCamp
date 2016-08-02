@@ -9,7 +9,7 @@
             </video>
             </div>
        
-            <h1>Welcome to YelpCamp</h1>
+            <h1 id="msg"></h1>
             <p>View our hand-picked campgrounds from all over the world!</p>
             <p><a class="btn btn-primary btn-large" href="/campgrounds/new">Add New Campground</a></p>
         </div>
@@ -31,5 +31,19 @@
     <% }) %>
     </div>
 </div>
+<script>
+var showText = function (target, message, index, interval) {   
+  if (index < message.length) {
+    $(target).append(message[index++]);
+    setTimeout(function () { showText(target, message, index, interval); }, interval);
+  }
+}
+
+$(function () {
+
+  showText("#msg", "Welcome to YelpCamp", 0, 100);   
+
+});
+</script>
 
 <% include ../partials/footer %>
