@@ -104,7 +104,7 @@ app.post("/campgrounds/:id/comments", function(req, res){
    //redirect campground show page
 });
 
-app.get("/other/about", function(req, res){
+app.get("/other/todoList", function(req, res){
     res.render("other/todoList");
 });
 
@@ -112,6 +112,9 @@ app.get("/other/colorgame", function(req, res){
     res.render("other/colorGame");
 });
 
+app.get("/other/about", function(req, res){
+   res.render("other/about"); 
+});
 
 app.listen(process.env.PORT, process.env.IP, function(){
     console.log("server has started");
